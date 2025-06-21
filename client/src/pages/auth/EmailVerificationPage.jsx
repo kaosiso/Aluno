@@ -18,7 +18,9 @@ const EmailVerificationPage = () => {
 
     const verifyEmail = async () => {
       try {
-        await axios.get(`http://localhost:5000/api/auth/verify?token=${token}`);
+        await axios.get(
+          `${import.meta.env.VITE_BACKEND_URL}/api/auth/verify?token=${token}`
+        );
         setStatus("success");
         toast.success("Email verified successfully!");
 
@@ -50,7 +52,8 @@ const EmailVerificationPage = () => {
 
       {status === "error" && (
         <div className="text-red-500 text-lg font-medium">
-          ❌ Verification failed or token expired. Please try again or request a new link.
+          ❌ Verification failed or token expired. Please try again or request a
+          new link.
         </div>
       )}
     </div>

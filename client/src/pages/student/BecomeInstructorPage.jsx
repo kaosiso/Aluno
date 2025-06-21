@@ -13,7 +13,7 @@ const BecomeInstructorPage = () => {
     try {
       setLoading(true);
       const response = await axios.post(
-        "http://localhost:5000/api/instructor/become-instructor",
+        `${import.meta.env.VITE_BACKEND_URL}/api/instructor/become-instructor`,
         {},
         { withCredentials: true }
       );
