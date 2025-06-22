@@ -12,9 +12,10 @@ const PORT = process.env.PORT || 5000;
 
 // Middleware
 const allowedOrigins = [
-  "http://localhost:5173", // dev
-  "https://alunoserver.vercel.app/",
+  "http://localhost:5173",                 // dev
+  "https://aluno-blond.vercel.app",       // ✅ frontend in production
 ];
+
 
 app.use(
   cors({
