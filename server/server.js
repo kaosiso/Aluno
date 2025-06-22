@@ -6,10 +6,6 @@ const cookieParser = require("cookie-parser");
 const connectDB = require('./db/connectDB');
 const { connectCloudinary } = require('./configs/cloudinary');
 
-const authRoutes = require('./routes/auth.route');
-const courseRoutes = require('./routes/course.route');
-const instructorRoutes = require('./routes/instructor.route');
-const userRoutes = require('./routes/user.route');
 
 const app = express();
 const PORT = process.env.PORT || 5000;
@@ -37,10 +33,6 @@ app.use(express.json());
 app.use(cookieParser());
 
 // API Routes
-app.use("/api/auth", authRoutes);
-app.use("/api/course", courseRoutes);
-app.use("/api/instructor", instructorRoutes);
-app.use("/api/user", userRoutes);
 
 
 app.get("/", (req, res) => {
